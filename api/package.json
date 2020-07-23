@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "ConstantineGochev",
+  "license": "ISC",
+  "dependencies": {
+    "pdfjs": "^2.3.9",
+    "pdfjs-dist": "^2.4.456"
+  }
+}
