@@ -1,8 +1,8 @@
-const { gettext } = require("./libs/pdf");
+const { getTextPerPage } = require("./libs/pdf");
 
 // waiting on gettext to finish completion, or error
-gettext("./tibetan-book-dead.pdf").then(function (text) {
-  console.log('parse ', text);
+getTextPerPage("./tibetan-book-dead.pdf").then(function (texts) {
+  console.log('parse ', texts);
 },
 function (reason) {
   console.log(reason);
