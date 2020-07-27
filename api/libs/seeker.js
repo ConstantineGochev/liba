@@ -1,10 +1,13 @@
+const utils = require("./utils");
 
-function Seeker(type, term, searchObj) {
+function Seeker(type, term, bookName, searchArr) {
   this.type = type;
   this.term = term;
   this.words = term.split(" ");
-  /* Search Object contains bookname -> page contents array*/
-  this.searchObj = searchObj;
+  this.bookName = bookName;
+  /* Search Arr contains page contents array*/
+  this.searchArr = searchArr;
+  this.results = {};
   return this.seek();
 }
 Seeker.prototype.seek = function() {
@@ -17,11 +20,16 @@ Seeker.prototype.seek = function() {
   }
 }
 Seeker.prototype.seekByAnyWord = function() {
-  console.log("type = %s, term = %s ",this.type,this.term)
-  return Object.values(this.searchObj).reduce(function(textarr) {
-    console.log(textarr)
-  })
-
+  let arrLen = this.searchArr.length;
+  let indx = 0;
+  while(indx < arrLen) {
+    let indices = utils.getIndicesOf(this.term, this.searchArr[indx],false)
+    if(indices.length > 0) {
+        this.results[indx] = indices
+    }
+    indx++
+  }
+  return this.results
 }
 Seeker.prototype.seekByExactPhrase = function() {
 
