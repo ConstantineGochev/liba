@@ -13,7 +13,8 @@ function getTextPerPage(pdfUrl){
       countPromises.push(page.then(function(page) { // add page promise
         var textContent = page.getTextContent();
         return textContent.then(function(text){ // return content promise
-          return text.items.map(function (s) { return s.str; }).join(''); // value page text
+          //console.log("PAGE TEXT CONTENTS = ",text.items);
+          return text.items.map(function (s) { return s.str; }).join(' '); // value page text
         });
       }));
     }

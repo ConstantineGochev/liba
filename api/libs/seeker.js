@@ -1,11 +1,10 @@
 
-function Seeker(type, term, category, author, book) {
+function Seeker(type, term, searchObj) {
   this.type = type;
   this.term = term;
   this.words = term.split(" ");
-  this.category = category;
-  this.author = author;
-  this.book = book;
+  /* Search Object contains bookname -> page contents array*/
+  this.searchObj = searchObj;
   return this.seek();
 }
 Seeker.prototype.seek = function() {
@@ -18,7 +17,10 @@ Seeker.prototype.seek = function() {
   }
 }
 Seeker.prototype.seekByAnyWord = function() {
-
+  console.log("type = %s, term = %s ",this.type,this.term)
+  return Object.values(this.searchObj).reduce(function(textarr) {
+    console.log(textarr)
+  })
 
 }
 Seeker.prototype.seekByExactPhrase = function() {
@@ -37,6 +39,6 @@ Seeker.prototype.seekInTitle = function() {
 Seeker.ANYWORD = 0;
 Seeker.EXACTPHRASE = 1;
 Seeker.SENTENCECONTAINING = 2;
-Seerer.INTITLE = 3;
+Seeker.INTITLE = 3;
 
 module.exports = Seeker;
