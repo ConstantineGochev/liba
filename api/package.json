@@ -10,7 +10,9 @@
   "author": "ConstantineGochev",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "pdfjs": "^2.3.9",
-    "pdfjs-dist": "^2.4.456"
+    "pdfjs-dist": "^2.4.456",
+    "redis": "^3.0.2"
   }
 }

@@ -14,12 +14,24 @@ function getIndicesOf(searchStr, str, caseSensitive) {
     }
     return indices;
 }
+
 function getParagraph(page, indxes) {
 
 
 }
 
+function getSentence(page, indxes) {
+
+
+}
+
+function getPageText(pagesArr, pageIndx) {
+  return pagesArr[pageIndx]
+}
 
 module.exports = {
-  getIndicesOf
+  getIndicesOf,
+  getParagraph,
+  getSentence,
+  getPageText
 }
