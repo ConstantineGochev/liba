@@ -14,7 +14,10 @@ function getIndicesOf(searchStr, str, caseSensitive) {
     }
     return indices;
 }
+function getParagraph(page, indxes) {
 
+
+}
 
 
 module.exports = {

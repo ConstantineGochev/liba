@@ -1,6 +1,5 @@
 const PDFJS = require("pdfjs-dist/es5/build/pdf.js");
 
-
 function getTextPerPage(pdfUrl){
   var pdf = PDFJS.getDocument(pdfUrl).promise;
   return pdf.then(function(pdf) { // get all pages text
